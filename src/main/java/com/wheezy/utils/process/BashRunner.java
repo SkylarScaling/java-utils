@@ -11,6 +11,14 @@ import javafx.scene.control.TextArea;
 
 public class BashRunner
 {
+  /**
+   * Creates a new process for executing a {@code command} and outputting the result to the {@code outputTextArea} in real time.
+   * 
+   * @param   command               Command to be executed
+   * @param   outputTextArea        {@link javafx.scene.control.TextArea TextArea} to display the output
+   * @throws  IOException
+   * @throws  InterruptedException
+   */
   public static void run(String command, TextArea outputTextArea) throws IOException, InterruptedException
   {
     List<String> commands = new ArrayList<>();
