@@ -13,6 +13,9 @@ import com.wheezy.utils.file.filter.list.FileExtensionListFilter;
 import com.wheezy.utils.file.filter.list.FileOnlyListFilter;
 import com.wheezy.utils.file.filter.list.FileStartsWithListFilter;
 
+import javafx.stage.DirectoryChooser;
+import javafx.stage.Stage;
+
 public class FileUtility
 {
   public static final String LINE_SEPARATOR = System.getProperty("line.separator");
@@ -432,6 +435,15 @@ public class FileUtility
   public static String sanitizeStringForFilename(String filenameString)
   {
     return filenameString.replaceAll("[^a-zA-Z0-9-_\\.]", "_");
+  }
+  
+  public static File browseForDirectory(Stage stage, String browserTitle)
+  {
+    DirectoryChooser directoryChooser = new DirectoryChooser();
+    directoryChooser.setTitle(browserTitle);
+    File selectedDirectory = directoryChooser.showDialog(stage);
+    
+    return selectedDirectory;
   }
 
   /**
