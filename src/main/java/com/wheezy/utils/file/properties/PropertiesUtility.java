@@ -16,15 +16,11 @@ public class PropertiesUtility
 
   /**
    * Utility for managing properties files.
-   *
-   * @throws IOException
    */
-  public PropertiesUtility(String filename) throws IOException
+  public PropertiesUtility(String filename)
   {
     propsFilename = filename;
     propsFile = new File(propsFilename);
-
-    loadProperties();
   }
 
   private void checkFile() throws IOException
